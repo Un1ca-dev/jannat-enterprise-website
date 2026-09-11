@@ -21,7 +21,8 @@ const requiredFiles = [
   'assets/images/hero-visual.svg',
   'assets/images/broadband-visual.svg',
   'assets/images/og-image.svg',
-  'assets/images/owner-suman-sheikh.png'
+  'assets/images/owner-suman-sheikh.png',
+  'assets/images/brand-logo.png'
 ];
 
 requiredFiles.forEach(file => {

@@ -2,7 +2,7 @@
   <defs>
     <radialGradient id="bgGlow" cx="50%" cy="50%" r="65%">
       <stop offset="0%" stop-color="#10b981" stop-opacity="0.2" />
-      <stop offset="100%" stop-color="#060913" stop-opacity="0" />
+      <stop offset="100%" stop-color="#0f1115" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#10b981" stop-opacity="0.6" />
@@ -41,9 +41,9 @@
   
     <g transform="translate(125, 30)">
       <polygon points="75,15 15,45 135,45" fill="#1e293b" stroke="url(#accentGrad)" stroke-width="2" />
-      <rect x="25" y="45" width="15" height="65" fill="#0f172a" stroke="#10b981" stroke-width="1.5" />
-      <rect x="55" y="45" width="15" height="65" fill="#0f172a" stroke="#10b981" stroke-width="1.5" />
-      <rect x="85" y="45" width="15" height="65" fill="#0f172a" stroke="#10b981" stroke-width="1.5" />
+      <rect x="25" y="45" width="15" height="65" fill="#1b1e26" stroke="#10b981" stroke-width="1.5" />
+      <rect x="55" y="45" width="15" height="65" fill="#1b1e26" stroke="#10b981" stroke-width="1.5" />
+      <rect x="85" y="45" width="15" height="65" fill="#1b1e26" stroke="#10b981" stroke-width="1.5" />
       <rect x="15" y="110" width="120" height="15" fill="#1e293b" stroke="#3b82f6" stroke-width="2" />
       <circle cx="110" cy="90" r="22" fill="#080e1c" stroke="#10b981" stroke-width="2" stroke-dasharray="3,2" />
       <path d="M100 90 L107 97 L122 82" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" />

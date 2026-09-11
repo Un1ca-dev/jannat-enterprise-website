@@ -16,12 +16,12 @@ if (!fs.existsSync(srvDir)) {
 const logoSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" width="320" height="72" fill="none">
   <defs>
     <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff" />
-      <stop offset="50%" stop-color="#0284c7" />
-      <stop offset="100%" stop-color="#8b5cf6" />
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="50%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#d4af37" />
     </linearGradient>
     <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="0%" stop-color="#1b1e26" />
       <stop offset="100%" stop-color="#020617" />
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
@@ -31,22 +31,22 @@ const logoSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" wi
   </defs>
   <g transform="translate(6, 6)">
     <polygon points="30,2 58,18 58,42 30,58 2,42 2,18" fill="url(#hexGrad)" stroke="url(#logoGrad)" stroke-width="2.5" filter="url(#glow)" />
-    <polygon points="30,7 53,20 53,40 30,53 7,40 7,20" fill="none" stroke="rgba(0, 240, 255, 0.25)" stroke-width="1.2" stroke-dasharray="3,3" />
-    <path d="M22 17 V36 C22 41 17 42 14 40" stroke="#00f0ff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <polygon points="30,7 53,20 53,40 30,53 7,40 7,20" fill="none" stroke="rgba(249, 115, 22, 0.25)" stroke-width="1.2" stroke-dasharray="3,3" />
+    <path d="M22 17 V36 C22 41 17 42 14 40" stroke="#f97316" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
     <path d="M28 18 H43 M28 29 H39 M28 40 H43" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    <circle cx="22" cy="18" r="2.2" fill="#8b5cf6" />
+    <circle cx="22" cy="18" r="2.2" fill="#d4af37" />
   </g>
   <g transform="translate(76, 15)">
     <text x="0" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', sans-serif" font-weight="900" font-size="19" letter-spacing="1.2" fill="#ffffff">
-      JANNAT <tspan fill="#00f0ff">ENTERPRISE</tspan>
+      JANNAT <tspan fill="#f97316">ENTERPRISE</tspan>
     </text>
     <text x="0" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-weight="700" font-size="8" letter-spacing="1.6" fill="#94a3b8">
       DIGITAL SERVICE &amp; TECHNOLOGY CENTRE
     </text>
     <g transform="translate(0, 39)">
-      <rect x="0" y="0" width="138" height="15" rx="7.5" fill="rgba(0, 240, 255, 0.08)" stroke="rgba(0, 240, 255, 0.25)" stroke-width="1" />
+      <rect x="0" y="0" width="138" height="15" rx="7.5" fill="rgba(249, 115, 22, 0.08)" stroke="rgba(249, 115, 22, 0.25)" stroke-width="1" />
       <circle cx="7.5" cy="7.5" r="3" fill="#10b981" />
-      <text x="15" y="10.5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-weight="700" font-size="7.5" fill="#38bdf8" letter-spacing="0.5">
+      <text x="15" y="10.5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-weight="700" font-size="7.5" fill="#f59e0b" letter-spacing="0.5">
         CSC VLE ID: 222365420014
       </text>
     </g>
@@ -57,15 +57,15 @@ fs.writeFileSync(path.join(imgDir, 'logo.svg'), logoSvg, 'utf-8');
 const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
   <defs>
     <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff" />
-      <stop offset="100%" stop-color="#8b5cf6" />
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#d4af37" />
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="16" fill="#070b14" />
-  <polygon points="32,6 56,20 56,44 32,58 8,44 8,20" fill="#0f172a" stroke="url(#favGrad)" stroke-width="2.5" />
-  <path d="M24 20 V38 C24 43 19 44 16 42" stroke="#00f0ff" stroke-width="3.5" stroke-linecap="round" fill="none" />
+  <polygon points="32,6 56,20 56,44 32,58 8,44 8,20" fill="#1b1e26" stroke="url(#favGrad)" stroke-width="2.5" />
+  <path d="M24 20 V38 C24 43 19 44 16 42" stroke="#f97316" stroke-width="3.5" stroke-linecap="round" fill="none" />
   <path d="M30 21 H44 M30 32 H40 M30 43 H44" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" fill="none" />
-  <circle cx="24" cy="20" r="2.2" fill="#8b5cf6" />
+  <circle cx="24" cy="20" r="2.2" fill="#d4af37" />
 </svg>`;
 fs.writeFileSync(path.join(assetsDir, 'favicon.svg'), faviconSvg, 'utf-8');
 
@@ -77,7 +77,7 @@ function cardFrame(primaryColor, secondaryColor, glyphSvg) {
   <defs>
     <radialGradient id="bgGlow" cx="50%" cy="50%" r="65%">
       <stop offset="0%" stop-color="${primaryColor}" stop-opacity="0.2" />
-      <stop offset="100%" stop-color="#060913" stop-opacity="0" />
+      <stop offset="100%" stop-color="#0f1115" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="${primaryColor}" stop-opacity="0.6" />
@@ -121,36 +121,36 @@ function cardFrame(primaryColor, secondaryColor, glyphSvg) {
 // 3. Service Illustrations Catalog
 // ---------------------------------------------------------------------------
 const svgs = {
-  'ayushman.svg': cardFrame('#00f0ff', '#10b981', `
+  'ayushman.svg': cardFrame('#f97316', '#10b981', `
     <g transform="translate(130, 35)">
-      <rect x="0" y="10" width="140" height="150" rx="24" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" filter="url(#glow)" />
+      <rect x="0" y="10" width="140" height="150" rx="24" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" filter="url(#glow)" />
       <path d="M70 25 V45 M60 35 H80" stroke="#10b981" stroke-width="4" stroke-linecap="round" />
-      <rect x="20" y="55" width="100" height="55" rx="8" fill="#1e293b" stroke="rgba(0,240,255,0.3)" stroke-width="1.5" />
+      <rect x="20" y="55" width="100" height="55" rx="8" fill="#1e293b" stroke="rgba(249, 115, 22,0.3)" stroke-width="1.5" />
       <circle cx="42" cy="80" r="14" fill="#334155" />
-      <circle cx="42" cy="76" r="6" fill="#00f0ff" />
-      <path d="M33 90 C33 84 51 84 51 90" fill="#00f0ff" />
+      <circle cx="42" cy="76" r="6" fill="#f97316" />
+      <path d="M33 90 C33 84 51 84 51 90" fill="#f97316" />
       <line x1=\"65\" y1=\"73\" x2=\"110\" y2=\"73\" stroke=\"#ffffff\" stroke-width=\"2.5\" stroke-linecap=\"round\" />
       <line x1=\"65\" y1=\"83\" x2=\"95\" y2=\"83\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-linecap=\"round\" />
       <path d=\"M25 130 Q 50 110, 70 135 T 115 130\" fill=\"none\" stroke=\"#10b981\" stroke-width=\"2.5\" stroke-linecap=\"round\" />
-      <circle cx=\"70\" cy=\"135\" r=\"4\" fill=\"#00f0ff\" />
+      <circle cx=\"70\" cy=\"135\" r=\"4\" fill=\"#f97316\" />
     </g>`),
 
-  'csc-govt.svg': cardFrame('#00f0ff', '#3b82f6', `
+  'csc-govt.svg': cardFrame('#f97316', '#3b82f6', `
     <g transform="translate(120, 30)">
-      <rect x="0" y="10" width="160" height="120" rx="16" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="0" y="10" width="160" height="120" rx="16" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <rect x="10" y="20" width="140" height="80" rx="8" fill="#070b14" />
-      <polygon points="80,30 115,45 115,75 80,95 45,75 45,45" fill="rgba(0,240,255,0.1)" stroke="#00f0ff" stroke-width="2" />
+      <polygon points="80,30 115,45 115,75 80,95 45,75 45,45" fill="rgba(249, 115, 22,0.1)" stroke="#f97316" stroke-width="2" />
       <text x="80" y="65" font-family="sans-serif" font-weight="900" font-size="16" fill="#ffffff" text-anchor="middle">CSC</text>
       <rect x="60" y="140" width="40" height="20" fill="#1e293b" stroke="rgba(255,255,255,0.1)" />
       <rect x="40" y="160" width="80" height="8" rx="4" fill="#334155" />
     </g>`),
 
-  'ration-card.svg': cardFrame('#10b981', '#00f0ff', `
+  'ration-card.svg': cardFrame('#10b981', '#f97316', `
     <g transform="translate(125, 35)">
-      <rect x="0" y="0" width="150" height="160" rx="14" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="0" y="0" width="150" height="160" rx="14" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <rect x="12" y="15" width="126" height="35" rx="6" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.3)" />
       <text x="75" y="37" font-family="sans-serif" font-weight="800" font-size="12" fill="#10b981" text-anchor="middle">DIGITAL RATION CARD</text>
-      <circle cx="40" cy="80" r="16" fill="#1e293b" stroke="#00f0ff" stroke-width="1.5" />
+      <circle cx="40" cy="80" r="16" fill="#1e293b" stroke="#f97316" stroke-width="1.5" />
       <path d="M40 70 V90 M30 80 H50" stroke="#10b981" stroke-width="2" />
       <line x1="68" y1="72" x2="130" y2="72" stroke="#ffffff" stroke-width="2" />
       <line x1="68" y1="84" x2="115" y2="84" stroke="#94a3b8" stroke-width="2" />
@@ -178,97 +178,97 @@ const svgs = {
 
   'pmfby.svg': cardFrame('#f59e0b', '#10b981', `
     <g transform="translate(130, 30)">
-      <path d="M70 30 C30 30 20 65 20 75 C20 125 70 150 70 150 C70 150 120 125 120 75 C120 65 110 30 70 30 Z" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <path d="M70 30 C30 30 20 65 20 75 C20 125 70 150 70 150 C70 150 120 125 120 75 C120 65 110 30 70 30 Z" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <path d="M50 95 C55 80 65 70 70 65 C75 70 85 80 90 95 C80 95 70 90 70 90 C70 90 60 95 50 95 Z" fill="#f59e0b" />
       <path d="M70 90 V115" stroke="#10b981" stroke-width="3" stroke-linecap="round" />
       <circle cx="70" cy="65" r="4" fill="#ffffff" />
     </g>`),
 
-  'pan-card.svg': cardFrame('#00f0ff', '#8b5cf6', `
+  'pan-card.svg': cardFrame('#f97316', '#d4af37', `
     <g transform="translate(115, 40)">
-      <rect x="0" y="0" width="170" height="110" rx="10" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" filter="url(#glow)" />
-      <rect x="10" y="10" width="150" height="20" rx="4" fill="rgba(0,240,255,0.15)" />
-      <text x="85" y="24" font-family="sans-serif" font-weight="800" font-size="9" fill="#00f0ff" text-anchor="middle">INCOME TAX DEPARTMENT</text>
-      <rect x="15" y="40" width="36" height="44" rx="4" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5" />
-      <circle cx="33" cy="56" r="8" fill="#38bdf8" />
-      <path d="M23 76 C23 68 43 68 43 76" fill="#38bdf8" />
+      <rect x="0" y="0" width="170" height="110" rx="10" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" filter="url(#glow)" />
+      <rect x="10" y="10" width="150" height="20" rx="4" fill="rgba(249, 115, 22,0.15)" />
+      <text x="85" y="24" font-family="sans-serif" font-weight="800" font-size="9" fill="#f97316" text-anchor="middle">INCOME TAX DEPARTMENT</text>
+      <rect x="15" y="40" width="36" height="44" rx="4" fill="#1e293b" stroke="#d4af37" stroke-width="1.5" />
+      <circle cx="33" cy="56" r="8" fill="#f59e0b" />
+      <path d="M23 76 C23 68 43 68 43 76" fill="#f59e0b" />
       <rect x="58" y="42" width="25" height="18" rx="3" fill="#f59e0b" opacity="0.9" />
       <line x1="90" y1="45" x2="155" y2="45" stroke="#ffffff" stroke-width="2" />
       <line x1="90" y1="55" x2="140" y2="55" stroke="#94a3b8" stroke-width="2" />
-      <line x1="58" y1="75" x2="155" y2="75" stroke="#00f0ff" stroke-width="3" stroke-linecap="round" />
+      <line x1="58" y1="75" x2="155" y2="75" stroke="#f97316" stroke-width="3" stroke-linecap="round" />
       <text x="106" y="98" font-family="monospace" font-weight="700" font-size="11" fill="#ffffff">ABCDE1234F</text>
     </g>`),
 
-  'passport.svg': cardFrame('#3b82f6', '#00f0ff', `
+  'passport.svg': cardFrame('#3b82f6', '#f97316', `
     <g transform="translate(130, 30)">
       <rect x="0" y="0" width="120" height="165" rx="12" fill="#091e42" stroke="url(#accentGrad)" stroke-width="2.5" />
       <text x="60" y="30" font-family="sans-serif" font-weight="900" font-size="12" fill="#f59e0b" letter-spacing="2" text-anchor="middle">PASSPORT</text>
       <circle cx="60" cy="80" r="26" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,3" />
-      <circle cx="60" cy="80" r="16" fill="none" stroke="#00f0ff" stroke-width="2" />
+      <circle cx="60" cy="80" r="16" fill="none" stroke="#f97316" stroke-width="2" />
       <path d="M50 80 H70 M60 70 V90" stroke="#ffffff" stroke-width="2" />
-      <path d="M45 130 L75 115 L60 145 Z" fill="#00f0ff" opacity="0.8" />
+      <path d="M45 130 L75 115 L60 145 Z" fill="#f97316" opacity="0.8" />
     </g>`),
 
-  'driving-licence.svg': cardFrame('#f59e0b', '#00f0ff', `
+  'driving-licence.svg': cardFrame('#f59e0b', '#f97316', `
     <g transform="translate(120, 35)">
-      <rect x="0" y="0" width="160" height="105" rx="10" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="0" y="0" width="160" height="105" rx="10" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <rect x="12" y="10" width="136" height="18" rx="3" fill="rgba(245,158,11,0.2)" />
       <text x="80" y="23" font-family="sans-serif" font-weight="800" font-size="9" fill="#f59e0b" text-anchor="middle">DRIVING LICENCE</text>
-      <circle cx="40" cy="65" r="18" fill="#1e293b" stroke="#00f0ff" stroke-width="2" />
-      <circle cx="40" cy="65" r="8" fill="#0f172a" stroke="#f59e0b" stroke-width="2" />
+      <circle cx="40" cy="65" r="18" fill="#1e293b" stroke="#f97316" stroke-width="2" />
+      <circle cx="40" cy="65" r="8" fill="#1b1e26" stroke="#f59e0b" stroke-width="2" />
       <line x1="40" y1="47" x2="40" y2="57" stroke="#ffffff" stroke-width="2" />
       <line x1="40" y1="73" x2="40" y2="83" stroke="#ffffff" stroke-width="2" />
       <line x1="22" y1="65" x2="32" y2="65" stroke="#ffffff" stroke-width="2" />
       <line x1="48" y1="65" x2="58" y2="65" stroke="#ffffff" stroke-width="2" />
       <line x1="70" y1="55" x2="145" y2="55" stroke="#ffffff" stroke-width="2.5" />
       <line x1="70" y1="70" x2="130" y2="70" stroke="#94a3b8" stroke-width="2" />
-      <line x1="70" y1="85" x2="115" y2="85" stroke="#00f0ff" stroke-width="2" />
+      <line x1="70" y1="85" x2="115" y2="85" stroke="#f97316" stroke-width="2" />
     </g>`),
 
-  'pvc-printing.svg': cardFrame('#8b5cf6', '#00f0ff', `
+  'pvc-printing.svg': cardFrame('#d4af37', '#f97316', `
     <g transform="translate(120, 25)">
-      <rect x="10" y="40" width="140" height="85" rx="10" fill="#0f172a" stroke="#8b5cf6" stroke-width="2.5" />
-      <rect x="30" y="55" width="100" height="12" rx="3" fill="#020617" stroke="#00f0ff" stroke-width="1" />
+      <rect x="10" y="40" width="140" height="85" rx="10" fill="#1b1e26" stroke="#d4af37" stroke-width="2.5" />
+      <rect x="30" y="55" width="100" height="12" rx="3" fill="#020617" stroke="#f97316" stroke-width="1" />
       <circle cx="130" cy="85" r="5" fill="#10b981" />
       <rect x="25" y="90" width="110" height="75" rx="8" fill="#1e293b" stroke="url(#accentGrad)" stroke-width="2" filter="url(#glow)" />
       <rect x="35" y="102" width="22" height="16" rx="2" fill="#f59e0b" />
       <line x1="65" y1="108" x2="120" y2="108" stroke="#ffffff" stroke-width="2" />
       <line x1="65" y1="118" x2="105" y2="118" stroke="#94a3b8" stroke-width="1.5" />
-      <circle cx="110" cy="145" r="8" fill="#00f0ff" opacity="0.7" />
-      <circle cx="120" cy="145" r="8" fill="#8b5cf6" opacity="0.7" />
+      <circle cx="110" cy="145" r="8" fill="#f97316" opacity="0.7" />
+      <circle cx="120" cy="145" r="8" fill="#d4af37" opacity="0.7" />
     </g>`),
 
-  'bank-bc.svg': cardFrame('#00f0ff', '#10b981', `
+  'bank-bc.svg': cardFrame('#f97316', '#10b981', `
     <g transform="translate(125, 25)">
-      <rect x="25" y="15" width="100" height="165" rx="16" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
-      <rect x="38" y="30" width="74" height="45" rx="6" fill="#020617" stroke="rgba(0,240,255,0.3)" />
+      <rect x="25" y="15" width="100" height="165" rx="16" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="38" y="30" width="74" height="45" rx="6" fill="#020617" stroke="rgba(249, 115, 22,0.3)" />
       <text x="75" y="57" font-family="sans-serif" font-weight="900" font-size="14" fill="#10b981" text-anchor="middle">₹ 5,000</text>
       <g fill="#334155" transform="translate(42, 85)">
         <circle cx="10" cy="10" r="5" /><circle cx="33" cy="10" r="5" /><circle cx="56" cy="10" r="5" />
         <circle cx="10" cy="28" r="5" /><circle cx="33" cy="28" r="5" /><circle cx="56" cy="28" r="5" />
         <circle cx="10" cy="46" r="5" /><circle cx="33" cy="46" r="5" /><circle cx="56" cy="46" r="5" />
       </g>
-      <circle cx="75" cy="155" r="14" fill="rgba(0,240,255,0.15)" stroke="#00f0ff" stroke-width="1.5" />
-      <path d="M70 155 C70 150 80 150 80 155 C80 160 70 160 70 165" fill="none" stroke="#00f0ff" stroke-width="1.5" />
+      <circle cx="75" cy="155" r="14" fill="rgba(249, 115, 22,0.15)" stroke="#f97316" stroke-width="1.5" />
+      <path d="M70 155 C70 150 80 150 80 155 C80 160 70 160 70 165" fill="none" stroke="#f97316" stroke-width="1.5" />
     </g>`),
 
-  'axis-bc.svg': cardFrame('#e11d48', '#8b5cf6', `
+  'axis-bc.svg': cardFrame('#e11d48', '#d4af37', `
     <g transform="translate(120, 30)">
-      <rect x="0" y="10" width="160" height="125" rx="14" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="0" y="10" width="160" height="125" rx="14" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <rect x="15" y="25" width="130" height="35" rx="6" fill="rgba(225,29,72,0.15)" stroke="rgba(225,29,72,0.4)" />
       <text x="80" y="47" font-family="sans-serif" font-weight="900" font-size="13" fill="#fb7185" text-anchor="middle">AXIS BANK BC</text>
       <circle cx="50" cy="95" r="18" fill="#1e293b" stroke="#fb7185" stroke-width="1.5" />
       <path d="M50 86 L57 95 H43 Z" fill="#fb7185" />
-      <circle cx="105" cy="95" r="18" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5" />
-      <path d="M100 95 H110 M105 90 V100" stroke="#8b5cf6" stroke-width="2" />
+      <circle cx="105" cy="95" r="18" fill="#1e293b" stroke="#d4af37" stroke-width="1.5" />
+      <path d="M100 95 H110 M105 90 V100" stroke="#d4af37" stroke-width="2" />
     </g>`),
 
   'new-bank-account.svg': cardFrame('#10b981', '#3b82f6', `
     <g transform="translate(125, 30)">
       <polygon points="75,15 15,45 135,45" fill="#1e293b" stroke="url(#accentGrad)" stroke-width="2" />
-      <rect x="25" y="45" width="15" height="65" fill="#0f172a" stroke="#10b981" stroke-width="1.5" />
-      <rect x="55" y="45" width="15" height="65" fill="#0f172a" stroke="#10b981" stroke-width="1.5" />
-      <rect x="85" y="45" width="15" height="65" fill="#0f172a" stroke="#10b981" stroke-width="1.5" />
+      <rect x="25" y="45" width="15" height="65" fill="#1b1e26" stroke="#10b981" stroke-width="1.5" />
+      <rect x="55" y="45" width="15" height="65" fill="#1b1e26" stroke="#10b981" stroke-width="1.5" />
+      <rect x="85" y="45" width="15" height="65" fill="#1b1e26" stroke="#10b981" stroke-width="1.5" />
       <rect x="15" y="110" width="120" height="15" fill="#1e293b" stroke="#3b82f6" stroke-width="2" />
       <circle cx="110" cy="90" r="22" fill="#080e1c" stroke="#10b981" stroke-width="2" stroke-dasharray="3,2" />
       <path d="M100 90 L107 97 L122 82" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" />
@@ -283,27 +283,27 @@ const svgs = {
       <text x="75" y="134" font-family="sans-serif" font-weight="900" font-size="10" fill="#000000" text-anchor="middle">APPLY</text>
     </g>`),
 
-  'credit-card.svg': cardFrame('#8b5cf6', '#ec4899', `
+  'credit-card.svg': cardFrame('#d4af37', '#ec4899', `
     <g transform="translate(115, 45)">
-      <rect x="0" y="0" width="170" height="105" rx="14" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" filter="url(#glow)" />
+      <rect x="0" y="0" width="170" height="105" rx="14" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" filter="url(#glow)" />
       <rect x="20" y="30" width="28" height="22" rx="4" fill="#f59e0b" />
       <path d="M58 35 C62 38 62 44 58 47" fill="none" stroke="#ffffff" stroke-width="2" />
       <path d="M63 32 C69 37 69 47 63 52" fill="none" stroke="#ffffff" stroke-width="2" />
       <text x="20" y="78" font-family="monospace" font-size="13" font-weight="700" fill="#ffffff" letter-spacing="2">•••• 8918</text>
       <circle cx="130" cy="80" r="12" fill="#ec4899" opacity="0.8" />
-      <circle cx="145" cy="80" r="12" fill="#8b5cf6" opacity="0.8" />
+      <circle cx="145" cy="80" r="12" fill="#d4af37" opacity="0.8" />
     </g>`),
 
-  'insurance.svg': cardFrame('#00f0ff', '#3b82f6', `
+  'insurance.svg': cardFrame('#f97316', '#3b82f6', `
     <g transform="translate(130, 30)">
-      <path d="M70 20 C35 20 20 50 20 75 C20 120 70 150 70 150 C70 150 120 120 120 75 C120 50 105 20 70 20 Z" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
-      <path d="M45 80 C45 60 95 60 95 80 Z" fill="#00f0ff" />
+      <path d="M70 20 C35 20 20 50 20 75 C20 120 70 150 70 150 C70 150 120 120 120 75 C120 50 105 20 70 20 Z" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <path d="M45 80 C45 60 95 60 95 80 Z" fill="#f97316" />
       <path d="M70 80 V100 C70 105 65 105 65 100" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
     </g>`),
 
-  'bill-payment.svg': cardFrame('#f59e0b', '#00f0ff', `
+  'bill-payment.svg': cardFrame('#f59e0b', '#f97316', `
     <g transform="translate(130, 30)">
-      <rect x="10" y="10" width="120" height="155" rx="10" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="10" y="10" width="120" height="155" rx="10" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <circle cx="70" cy="45" r="18" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="2" />
       <path d="M72 35 L62 47 H72 L68 57 L80 44 H70 Z" fill="#f59e0b" />
       <line x1="30" y1="80" x2="110" y2="80" stroke="#ffffff" stroke-width="2" />
@@ -313,9 +313,9 @@ const svgs = {
       <text x="70" y="142" font-family="sans-serif" font-weight="800" font-size="10" fill="#000000" text-anchor="middle">PAID ✓</text>
     </g>`),
 
-  'mobile-recharge.svg': cardFrame('#00f0ff', '#10b981', `
+  'mobile-recharge.svg': cardFrame('#f97316', '#10b981', `
     <g transform="translate(135, 25)">
-      <rect x="20" y="15" width="90" height="165" rx="18" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="20" y="15" width="90" height="165" rx="18" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <rect x="30" y="30" width="70" height="120" rx="8" fill="#020617" />
       <g fill="#10b981" transform="translate(75, 38)">
         <rect x="0" y="6" width="3" height="4" />
@@ -323,7 +323,7 @@ const svgs = {
         <rect x="10" y="2" width="3" height="8" />
         <rect x="15" y="0" width="3" height="10" />
       </g>
-      <text x="65" y="85" font-family="sans-serif" font-weight="900" font-size="22" fill="#00f0ff" text-anchor="middle">5G</text>
+      <text x="65" y="85" font-family="sans-serif" font-weight="900" font-size="22" fill="#f97316" text-anchor="middle">5G</text>
       <rect x="40" y="105" width="50" height="20" rx="6" fill="#10b981" />
       <text x="65" y="119" font-family="sans-serif" font-weight="900" font-size="9" fill="#000000" text-anchor="middle">RECHARGE</text>
     </g>`),
@@ -332,95 +332,95 @@ const svgs = {
     <g transform="translate(140, 25)">
       <path d="M45 40 C45 25 75 25 75 40" stroke="#ef4444" stroke-width="4" fill="none" />
       <rect x="25" y="40" width="70" height="125" rx="24" fill="#991b1b" stroke="url(#accentGrad)" stroke-width="2.5" />
-      <circle cx="60" cy="95" r="20" fill="#0f172a" stroke="#f59e0b" stroke-width="2" />
+      <circle cx="60" cy="95" r="20" fill="#1b1e26" stroke="#f59e0b" stroke-width="2" />
       <path d="M60 82 C55 90 50 96 50 102 C50 108 55 112 60 112 C65 112 70 108 70 102 C70 96 65 90 60 82 Z" fill="#f59e0b" />
     </g>`),
 
-  'online-forms.svg': cardFrame('#00f0ff', '#3b82f6', `
+  'online-forms.svg': cardFrame('#f97316', '#3b82f6', `
     <g transform="translate(125, 25)">
-      <rect x="10" y="15" width="130" height="165" rx="12" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="10" y="15" width="130" height="165" rx="12" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <rect x="25" y="35" width="100" height="15" rx="4" fill="#1e293b" />
       <rect x="25" y="60" width="100" height="15" rx="4" fill="#1e293b" />
       <rect x="25" y="85" width="60" height="15" rx="4" fill="#1e293b" />
       <circle cx="105" cy="92" r="8" fill="#10b981" />
-      <path d="M115 130 L135 110 L145 120 L125 140 Z" fill="#00f0ff" />
+      <path d="M115 130 L135 110 L145 120 L125 140 Z" fill="#f97316" />
       <polygon points="115,130 110,145 125,140" fill="#ffffff" />
     </g>`),
 
-  'computer-services.svg': cardFrame('#3b82f6', '#00f0ff', `
+  'computer-services.svg': cardFrame('#3b82f6', '#f97316', `
     <g transform="translate(115, 35)">
-      <rect x="10" y="10" width="150" height="105" rx="10" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="10" y="10" width="150" height="105" rx="10" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <rect x="22" y="22" width="126" height="80" rx="4" fill="#020617" />
-      <path d="M40 55 L55 70 L40 85" stroke="#00f0ff" stroke-width="3" stroke-linecap="round" fill="none" />
+      <path d="M40 55 L55 70 L40 85" stroke="#f97316" stroke-width="3" stroke-linecap="round" fill="none" />
       <line x1="65" y1="85" x2="90" y2="85" stroke="#10b981" stroke-width="3" stroke-linecap="round" />
       <rect x="75" y="115" width="20" height="25" fill="#1e293b" />
       <rect x="55" y="140" width="60" height="8" rx="4" fill="#334155" />
     </g>`),
 
-  'mobile-repair.svg': cardFrame('#00f0ff', '#f59e0b', `
+  'mobile-repair.svg': cardFrame('#f97316', '#f59e0b', `
     <g transform="translate(125, 25)">
-      <rect x="30" y="15" width="90" height="165" rx="18" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="30" y="15" width="90" height="165" rx="18" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <rect x="40" y="30" width="70" height="120" rx="6" fill="#020617" />
-      <path d="M20 70 L55 105 L65 95 L30 60 Z" fill="#38bdf8" />
+      <path d="M20 70 L55 105 L65 95 L30 60 Z" fill="#f59e0b" />
       <polygon points="15,65 20,70 30,60" fill="#f59e0b" />
-      <circle cx="75" cy="90" r="16" fill="rgba(0,240,255,0.15)" stroke="#00f0ff" stroke-width="1.5" />
+      <circle cx="75" cy="90" r="16" fill="rgba(249, 115, 22,0.15)" stroke="#f97316" stroke-width="1.5" />
       <path d="M70 90 L80 90 M75 85 L75 95" stroke="#10b981" stroke-width="2" stroke-linecap="round" />
     </g>`),
 
-  'mobile-software.svg': cardFrame('#8b5cf6', '#00f0ff', `
+  'mobile-software.svg': cardFrame('#d4af37', '#f97316', `
     <g transform="translate(125, 25)">
-      <rect x="30" y="15" width="90" height="165" rx="18" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="30" y="15" width="90" height="165" rx="18" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <rect x="40" y="30" width="70" height="120" rx="6" fill="#020617" />
-      <circle cx="75" cy="85" r="18" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-dasharray="6,4" />
-      <circle cx="75" cy="85" r="8" fill="#00f0ff" />
+      <circle cx="75" cy="85" r="18" fill="none" stroke="#d4af37" stroke-width="3" stroke-dasharray="6,4" />
+      <circle cx="75" cy="85" r="8" fill="#f97316" />
       <path d="M75 115 V135 M68 128 L75 135 L82 128" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
     </g>`),
 
-  'smartphone-troubleshoot.svg': cardFrame('#38bdf8', '#10b981', `
+  'smartphone-troubleshoot.svg': cardFrame('#f59e0b', '#10b981', `
     <g transform="translate(125, 25)">
-      <rect x="30" y="15" width="90" height="165" rx="18" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="30" y="15" width="90" height="165" rx="18" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <rect x="40" y="30" width="70" height="120" rx="6" fill="#020617" />
-      <circle cx="75" cy="75" r="20" fill="rgba(56,189,248,0.15)" stroke="#38bdf8" stroke-width="2" />
+      <circle cx="75" cy="75" r="20" fill="rgba(56,189,248,0.15)" stroke="#f59e0b" stroke-width="2" />
       <path d="M68 75 L73 80 L83 70" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" />
       <rect x="52" y="110" width="46" height="12" rx="3" fill="#1e293b" />
-      <text x="75" y="119" font-family="sans-serif" font-weight="800" font-size="8" fill="#38bdf8" text-anchor="middle">DIAGNOSED</text>
+      <text x="75" y="119" font-family="sans-serif" font-weight="800" font-size="8" fill="#f59e0b" text-anchor="middle">DIAGNOSED</text>
     </g>`),
 
-  'broadband-fiber.svg': cardFrame('#00f0ff', '#3b82f6', `
+  'broadband-fiber.svg': cardFrame('#f97316', '#3b82f6', `
     <g transform="translate(110, 30)">
-      <rect x="20" y="90" width="140" height="45" rx="10" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" filter="url(#glow)" />
-      <line x1="45" y1="90" x2="45" y2="35" stroke="#00f0ff" stroke-width="3.5" stroke-linecap="round" />
-      <line x1="135" y1="90" x2="135" y2="35" stroke="#00f0ff" stroke-width="3.5" stroke-linecap="round" />
+      <rect x="20" y="90" width="140" height="45" rx="10" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" filter="url(#glow)" />
+      <line x1="45" y1="90" x2="45" y2="35" stroke="#f97316" stroke-width="3.5" stroke-linecap="round" />
+      <line x1="135" y1="90" x2="135" y2="35" stroke="#f97316" stroke-width="3.5" stroke-linecap="round" />
       <circle cx="45" cy="35" r="4" fill="#10b981" />
       <circle cx="135" cy="35" r="4" fill="#10b981" />
-      <path d="M70 50 C80 40 100 40 110 50" fill="none" stroke="#00f0ff" stroke-width="3" stroke-linecap="round" />
-      <path d="M60 40 C75 25 105 25 120 40" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" opacity="0.6" />
-      <circle cx="90" cy="65" r="4" fill="#00f0ff" />
+      <path d="M70 50 C80 40 100 40 110 50" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round" />
+      <path d="M60 40 C75 25 105 25 120 40" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+      <circle cx="90" cy="65" r="4" fill="#f97316" />
       <circle cx="40" cy="112" r="3" fill="#10b981" />
       <circle cx="55" cy="112" r="3" fill="#10b981" />
       <circle cx="70" cy="112" r="3" fill="#10b981" />
-      <circle cx="85" cy="112" r="3" fill="#00f0ff" />
-      <text x="130" y="116" font-family="sans-serif" font-weight="900" font-size="11" fill="#38bdf8">1Gbps</text>
+      <circle cx="85" cy="112" r="3" fill="#f97316" />
+      <text x="130" y="116" font-family="sans-serif" font-weight="900" font-size="11" fill="#f59e0b">1Gbps</text>
     </g>`),
 
-  'cable-tv.svg': cardFrame('#3b82f6', '#8b5cf6', `
+  'cable-tv.svg': cardFrame('#3b82f6', '#d4af37', `
     <g transform="translate(115, 30)">
-      <rect x="10" y="15" width="150" height="100" rx="10" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="10" y="15" width="150" height="100" rx="10" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <rect x="20" y="25" width="130" height="80" rx="6" fill="#020617" />
       <circle cx="85" cy="65" r="24" fill="rgba(59,130,246,0.15)" stroke="#3b82f6" stroke-width="2" />
-      <path d="M75 55 Q 95 65, 85 75" stroke="#00f0ff" stroke-width="3" stroke-linecap="round" fill="none" />
+      <path d="M75 55 Q 95 65, 85 75" stroke="#f97316" stroke-width="3" stroke-linecap="round" fill="none" />
       <polygon points="60,85 75,65 80,70 65,90" fill="#ffffff" />
       <rect x="75" y="115" width="20" height="15" fill="#1e293b" />
       <rect x="55" y="130" width="60" height="8" rx="4" fill="#334155" />
     </g>`),
 
-  'print-scan-xerox.svg': cardFrame('#00f0ff', '#10b981', `
+  'print-scan-xerox.svg': cardFrame('#f97316', '#10b981', `
     <g transform="translate(120, 25)">
-      <rect x="15" y="45" width="130" height="85" rx="10" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" />
+      <rect x="15" y="45" width="130" height="85" rx="10" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" />
       <rect x="40" y="15" width="80" height="35" rx="4" fill="#1e293b" stroke="rgba(255,255,255,0.2)" />
       <line x1="50" y1="25" x2="100" y2="25" stroke="#94a3b8" stroke-width="2" />
       <line x1="50" y1="35" x2="85" y2="35" stroke="#94a3b8" stroke-width="2" />
-      <rect x="35" y="110" width="90" height="45" rx="5" fill="#1e293b" stroke="#00f0ff" stroke-width="2" filter="url(#glow)" />
+      <rect x="35" y="110" width="90" height="45" rx="5" fill="#1e293b" stroke="#f97316" stroke-width="2" filter="url(#glow)" />
       <line x1="45" y1="122" x2="115" y2="122" stroke="#ffffff" stroke-width="2" />
       <line x1="45" y1="132" x2="95" y2="132" stroke="#10b981" stroke-width="2" />
     </g>`)
@@ -436,11 +436,11 @@ for (const [filename, content] of Object.entries(svgs)) {
 const heroSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 460" width="540" height="460" fill="none">
   <defs>
     <linearGradient id="heroCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="0%" stop-color="#1b1e26" />
       <stop offset="100%" stop-color="#020617" />
     </linearGradient>
     <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="0%" stop-color="#f97316" />
       <stop offset="100%" stop-color="#3b82f6" />
     </linearGradient>
     <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -454,15 +454,15 @@ const heroSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 460" w
   </defs>
 
   <!-- Ambient Glow Backdrops -->
-  <circle cx="270" cy="230" r="180" fill="#00f0ff" opacity="0.1" filter="url(#heroGlow)" />
-  <circle cx="380" cy="160" r="120" fill="#8b5cf6" opacity="0.12" filter="url(#heroGlow)" />
+  <circle cx="270" cy="230" r="180" fill="#f97316" opacity="0.1" filter="url(#heroGlow)" />
+  <circle cx="380" cy="160" r="120" fill="#d4af37" opacity="0.12" filter="url(#heroGlow)" />
 
   <!-- Main Digital Console Card -->
   <g transform="translate(40, 40)">
-    <rect width="460" height="340" rx="20" fill="url(#heroCardGrad)" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1.5" />
+    <rect width="460" height="340" rx="20" fill="url(#heroCardGrad)" stroke="rgba(249, 115, 22, 0.3)" stroke-width="1.5" />
     
     <!-- Header Bar -->
-    <rect width="460" height="48" rx="20" fill="#0b1329" />
+    <rect width="460" height="48" rx="20" fill="#16181f" />
     <circle cx="25" cy="24" r="5" fill="#ef4444" />
     <circle cx="42" cy="24" r="5" fill="#f59e0b" />
     <circle cx="59" cy="24" r="5" fill="#10b981" />
@@ -473,11 +473,11 @@ const heroSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 460" w
     <!-- Top Live Stats Row -->
     <g transform="translate(24, 68)">
       <!-- Metric 1: CSC Verified -->
-      <rect width="128" height="68" rx="10" fill="#111c38" stroke="rgba(0, 240, 255, 0.2)" />
-      <circle cx="20" cy="24" r="8" fill="rgba(0, 240, 255, 0.15)" />
-      <text x="20" y="28" font-family="sans-serif" font-weight="900" font-size="11" fill="#00f0ff" text-anchor="middle">✓</text>
+      <rect width="128" height="68" rx="10" fill="#111c38" stroke="rgba(249, 115, 22, 0.2)" />
+      <circle cx="20" cy="24" r="8" fill="rgba(249, 115, 22, 0.15)" />
+      <text x="20" y="28" font-family="sans-serif" font-weight="900" font-size="11" fill="#f97316" text-anchor="middle">✓</text>
       <text x="36" y="26" font-family="sans-serif" font-weight="800" font-size="11" fill="#ffffff">CSC VLE</text>
-      <text x="14" y="52" font-family="sans-serif" font-weight="900" font-size="13" fill="#38bdf8">222365420014</text>
+      <text x="14" y="52" font-family="sans-serif" font-weight="900" font-size="13" fill="#f59e0b">222365420014</text>
 
       <!-- Metric 2: Services -->
       <rect x="142" width="128" height="68" rx="10" fill="#111c38" stroke="rgba(16, 185, 129, 0.2)" />
@@ -487,11 +487,11 @@ const heroSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 460" w
       <text x="156" y="52" font-family="sans-serif" font-weight="900" font-size="15" fill="#10b981">22+ Active</text>
 
       <!-- Metric 3: Hours -->
-      <rect x="284" width="128" height="68" rx="10" fill="#111c38" stroke="rgba(139, 92, 246, 0.2)" />
-      <circle cx="304" cy="24" r="8" fill="rgba(139, 92, 246, 0.15)" />
-      <text x="304" y="27" font-family="sans-serif" font-weight="900" font-size="10" fill="#a78bfa" text-anchor="middle">⏱</text>
+      <rect x="284" width="128" height="68" rx="10" fill="#111c38" stroke="rgba(212, 175, 55, 0.2)" />
+      <circle cx="304" cy="24" r="8" fill="rgba(212, 175, 55, 0.15)" />
+      <text x="304" y="27" font-family="sans-serif" font-weight="900" font-size="10" fill="#fcd34d" text-anchor="middle">⏱</text>
       <text x="320" y="26" font-family="sans-serif" font-weight="800" font-size="11" fill="#ffffff">HOURS</text>
-      <text x="298" y="52" font-family="sans-serif" font-weight="900" font-size="13" fill="#a78bfa">9 AM – 8 PM</text>
+      <text x="298" y="52" font-family="sans-serif" font-weight="900" font-size="13" fill="#fcd34d">9 AM – 8 PM</text>
     </g>
 
     <!-- Center Active Hub Display -->
@@ -500,8 +500,8 @@ const heroSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 460" w
       
       <!-- Mini Service Category Bars -->
       <g transform="translate(18, 18)">
-        <circle cx="16" cy="16" r="14" fill="rgba(0, 240, 255, 0.15)" stroke="#00f0ff" stroke-width="1.5" />
-        <text x="16" y="21" font-family="sans-serif" font-weight="900" font-size="13" fill="#00f0ff" text-anchor="middle">🏥</text>
+        <circle cx="16" cy="16" r="14" fill="rgba(249, 115, 22, 0.15)" stroke="#f97316" stroke-width="1.5" />
+        <text x="16" y="21" font-family="sans-serif" font-weight="900" font-size="13" fill="#f97316" text-anchor="middle">🏥</text>
         <text x="42" y="16" font-family="sans-serif" font-weight="800" font-size="12" fill="#ffffff">Ayushman BIS &amp; Citizen Portals</text>
         <text x="42" y="29" font-family="sans-serif" font-size="10" fill="#94a3b8">Biometric e-KYC, Ration Card, PAN Card, Schemes</text>
       </g>
@@ -519,7 +519,7 @@ const heroSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 460" w
       <circle cx="8" cy="16" r="4" fill="#10b981">
         <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
       </circle>
-      <text x="20" y="20" font-family="sans-serif" font-weight="700" font-size="11" fill="#38bdf8">
+      <text x="20" y="20" font-family="sans-serif" font-weight="700" font-size="11" fill="#f59e0b">
         Moktarpur • Raipur • Domkal, Murshidabad • Dedicated Local Support
       </text>
     </g>
@@ -527,7 +527,7 @@ const heroSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 460" w
 
   <!-- Floating Glow Badges -->
   <g transform="translate(20, 340)">
-    <rect width="170" height="42" rx="21" fill="#0b1329" stroke="#10b981" stroke-width="1.5" filter="url(#heroGlow)" />
+    <rect width="170" height="42" rx="21" fill="#16181f" stroke="#10b981" stroke-width="1.5" filter="url(#heroGlow)" />
     <circle cx="21" cy="21" r="10" fill="#10b981" />
     <text x="21" y="25" font-family="sans-serif" font-weight="900" font-size="12" fill="#000000" text-anchor="middle">✓</text>
     <text x="40" y="20" font-family="sans-serif" font-weight="800" font-size="10" fill="#ffffff">100% GENUINE</text>
@@ -535,11 +535,11 @@ const heroSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 460" w
   </g>
 
   <g transform="translate(360, 360)">
-    <rect width="160" height="42" rx="21" fill="#0b1329" stroke="#00f0ff" stroke-width="1.5" filter="url(#heroGlow)" />
-    <circle cx="21" cy="21" r="10" fill="#00f0ff" />
+    <rect width="160" height="42" rx="21" fill="#16181f" stroke="#f97316" stroke-width="1.5" filter="url(#heroGlow)" />
+    <circle cx="21" cy="21" r="10" fill="#f97316" />
     <text x="21" y="25" font-family="sans-serif" font-weight="900" font-size="11" fill="#000000" text-anchor="middle">⚡</text>
     <text x="40" y="20" font-family="sans-serif" font-weight="800" font-size="10" fill="#ffffff">FIBER SPEED</text>
-    <text x="40" y="32" font-family="sans-serif" font-weight="600" font-size="9" fill="#38bdf8">Gigabit Internet</text>
+    <text x="40" y="32" font-family="sans-serif" font-weight="600" font-size="9" fill="#f59e0b">Gigabit Internet</text>
   </g>
 </svg>`;
 fs.writeFileSync(path.join(imgDir, 'hero-visual.svg'), heroSvg, 'utf-8');

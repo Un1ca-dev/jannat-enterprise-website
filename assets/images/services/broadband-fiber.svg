@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240" fill="none">
   <defs>
     <radialGradient id="bgGlow" cx="50%" cy="50%" r="65%">
-      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.2" />
-      <stop offset="100%" stop-color="#060913" stop-opacity="0" />
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#0f1115" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.6" />
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.6" />
       <stop offset="50%" stop-color="rgba(255,255,255,0.08)" />
       <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.35" />
     </linearGradient>
     <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="0%" stop-color="#f97316" />
       <stop offset="100%" stop-color="#3b82f6" />
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
@@ -36,22 +36,22 @@
   </g>
 
   <!-- Ambient Light Beam -->
-  <circle cx="200" cy="120" r="85" fill="#00f0ff" opacity="0.06" />
+  <circle cx="200" cy="120" r="85" fill="#f97316" opacity="0.06" />
 
   
     <g transform="translate(110, 30)">
-      <rect x="20" y="90" width="140" height="45" rx="10" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2.5" filter="url(#glow)" />
-      <line x1="45" y1="90" x2="45" y2="35" stroke="#00f0ff" stroke-width="3.5" stroke-linecap="round" />
-      <line x1="135" y1="90" x2="135" y2="35" stroke="#00f0ff" stroke-width="3.5" stroke-linecap="round" />
+      <rect x="20" y="90" width="140" height="45" rx="10" fill="#1b1e26" stroke="url(#accentGrad)" stroke-width="2.5" filter="url(#glow)" />
+      <line x1="45" y1="90" x2="45" y2="35" stroke="#f97316" stroke-width="3.5" stroke-linecap="round" />
+      <line x1="135" y1="90" x2="135" y2="35" stroke="#f97316" stroke-width="3.5" stroke-linecap="round" />
       <circle cx="45" cy="35" r="4" fill="#10b981" />
       <circle cx="135" cy="35" r="4" fill="#10b981" />
-      <path d="M70 50 C80 40 100 40 110 50" fill="none" stroke="#00f0ff" stroke-width="3" stroke-linecap="round" />
-      <path d="M60 40 C75 25 105 25 120 40" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" opacity="0.6" />
-      <circle cx="90" cy="65" r="4" fill="#00f0ff" />
+      <path d="M70 50 C80 40 100 40 110 50" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round" />
+      <path d="M60 40 C75 25 105 25 120 40" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+      <circle cx="90" cy="65" r="4" fill="#f97316" />
       <circle cx="40" cy="112" r="3" fill="#10b981" />
       <circle cx="55" cy="112" r="3" fill="#10b981" />
       <circle cx="70" cy="112" r="3" fill="#10b981" />
-      <circle cx="85" cy="112" r="3" fill="#00f0ff" />
-      <text x="130" y="116" font-family="sans-serif" font-weight="900" font-size="11" fill="#38bdf8">1Gbps</text>
+      <circle cx="85" cy="112" r="3" fill="#f97316" />
+      <text x="130" y="116" font-family="sans-serif" font-weight="900" font-size="11" fill="#f59e0b">1Gbps</text>
     </g>
 </svg>
