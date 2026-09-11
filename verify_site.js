@@ -96,14 +96,43 @@ try {
     errors.push("JANNAT_CONFIG not found in js/config.js");
   } else {
     console.log("✓ JANNAT_CONFIG loaded successfully");
+    if (cfg.ownerName !== "SUMAN SHEIKH") errors.push(`Owner name mismatch: expected SUMAN SHEIKH, got ${cfg.ownerName}`);
+    else console.log(`✓ Owner name verified: ${cfg.ownerName}`);
     if (cfg.phone !== "8918273721") errors.push(`Phone mismatch: expected 8918273721, got ${cfg.phone}`);
     if (cfg.cscId !== "222365420014") errors.push(`CSC ID mismatch: expected 222365420014, got ${cfg.cscId}`);
     if (cfg.siteUrl !== "https://jannat.un1ca.qzz.io") errors.push(`siteUrl mismatch: expected https://jannat.un1ca.qzz.io, got ${cfg.siteUrl}`);
-    if (!cfg.services || cfg.services.length < 10) errors.push(`Expected at least 10 services, found ${cfg.services?.length}`);
-    else console.log(`✓ Services catalog verified (${cfg.services.length} services configured)`);
+    if (cfg.googleMapsUrl !== "https://maps.app.goo.gl/zQPQ9THg9YLAYM4r6") errors.push(`Google Maps URL mismatch: got ${cfg.googleMapsUrl}`);
+    else console.log(`✓ Google Maps URL verified: ${cfg.googleMapsUrl}`);
+    if (!cfg.services || cfg.services.length < 20) errors.push(`Expected at least 20 services, found ${cfg.services?.length}`);
+    else console.log(`✓ Comprehensive services catalog verified (${cfg.services.length} services configured)`);
   }
 } catch (err) {
   errors.push(`Error executing config.js: ${err.message}`);
+}
+
+// 4b. Verify required interactive DOM containers in index.html
+const requiredIds = [
+  'popularServicesGrid',
+  'serviceCategoryTabs',
+  'servicesGrid',
+  'serviceSearchInput',
+  'mobileRepairCardsGrid',
+  'moreServicesToggleBtn',
+  'moreServicesContent'
+];
+requiredIds.forEach(id => {
+  if (!htmlContent.includes(`id="${id}"`)) {
+    errors.push(`Missing required container id="${id}" in index.html`);
+  } else {
+    console.log(`✓ Found container id="${id}"`);
+  }
+});
+
+// Check owner name SUMAN SHEIKH in index.html
+if (!htmlContent.includes("SUMAN SHEIKH")) {
+  errors.push("Owner name SUMAN SHEIKH missing from index.html");
+} else {
+  console.log("✓ Found Shop Owner SUMAN SHEIKH in index.html");
 }
 
 // 5. Verify Cloudflare special files

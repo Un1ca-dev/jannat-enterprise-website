@@ -1044,10 +1044,437 @@ ul, ol {
 }
 
 .service-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-top: auto;
+}
+
+.service-action-quick-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.service-badge.popular {
+  background: rgba(245, 158, 11, 0.15);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   Most Requested Services Spotlight
+   -------------------------------------------------------------------------- */
+.popular-services-spotlight {
+  margin-bottom: 2.5rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.popular-spotlight-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.popular-spotlight-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--color-navy-950);
+}
+
+.popular-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.875rem;
+}
+
+.popular-pill-card {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 1rem;
+  background: var(--color-slate-50);
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.popular-pill-card:hover {
+  background: var(--color-white);
+  border-color: var(--color-blue-bright);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.popular-pill-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--color-blue-light);
+  color: var(--color-blue-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.popular-pill-text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.popular-pill-text .title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-navy-950);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popular-pill-text .sub {
+  font-size: 0.75rem;
+  color: var(--color-slate-500);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popular-pill-btn {
+  padding: 4px 10px;
+  font-size: 0.71875rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--color-blue-bright);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.popular-pill-btn:hover {
+  background: var(--color-blue-bright);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Global Service Search & Category Filter Tabs
+   -------------------------------------------------------------------------- */
+.services-search-container {
+  margin-bottom: 2rem;
+}
+
+.service-search-wrap {
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto 1.5rem;
+}
+
+.service-search-input {
+  width: 100%;
+  padding: 1.1rem 3.25rem 1.1rem 3.25rem;
+  font-size: 1.05rem;
+  border: 2px solid var(--color-slate-300);
+  border-radius: var(--radius-full);
+  background-color: var(--color-white);
+  color: var(--color-slate-800);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+}
+
+.service-search-input:focus {
+  outline: none;
+  border-color: var(--color-blue-bright);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+.search-icon-left {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-slate-400);
+  pointer-events: none;
+  display: flex;
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-slate-200);
+  color: var(--color-slate-600);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.search-clear-btn:hover {
+  background: var(--color-slate-300);
+  color: var(--color-navy-950);
+}
+
+.category-tabs-scroll-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+  justify-content: flex-start;
+}
+
+@media (min-width: 992px) {
+  .category-tabs-scroll-wrap {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.category-tab-btn {
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-slate-300);
+  color: var(--color-slate-700);
+  font-size: 0.875rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.category-tab-btn:hover {
+  border-color: var(--color-blue-bright);
+  color: var(--color-blue-bright);
+}
+
+.category-tab-btn.active {
+  background: var(--color-blue-bright);
+  border-color: var(--color-blue-bright);
+  color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.search-results-badge {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+  color: var(--color-slate-600);
+}
+
+.no-services-found {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background: var(--color-white);
+  border: 1px dashed var(--color-slate-300);
+  border-radius: var(--radius-xl);
+}
+
+/* --------------------------------------------------------------------------
+   Dedicated Mobile Repair & Software Section
+   -------------------------------------------------------------------------- */
+.mobile-repair-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: var(--color-white);
+}
+
+.mobile-repair-section .section-title {
+  color: var(--color-white);
+}
+
+.mobile-repair-section .section-subtitle {
+  color: var(--color-slate-300);
+}
+
+.mobile-repair-cards-grid {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .mobile-repair-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.mobile-repair-feature-card {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.mobile-repair-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-blue-glow);
+  box-shadow: var(--shadow-xl);
+}
+
+.repair-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--color-blue-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.mobile-repair-feature-card h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-white);
+  margin-bottom: 0.35rem;
+}
+
+.repair-subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-blue-glow);
+  margin-bottom: 0.875rem;
+}
+
+.mobile-repair-feature-card p {
+  font-size: 0.90625rem;
+  color: var(--color-slate-300);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.repair-check-list {
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.repair-check-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84375rem;
+  color: var(--color-slate-200);
+}
+
+.repair-check-list li svg {
+  color: var(--color-emerald-bright);
+  flex-shrink: 0;
+}
+
+.repair-card-cta {
+  display: flex;
+  gap: 0.75rem;
   margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.repair-card-cta .btn {
+  flex: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Expandable "আরও Online Services" Section
+   -------------------------------------------------------------------------- */
+.more-services-wrapper {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.more-services-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.875rem 2rem;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-blue-bright);
+  color: var(--color-blue-bright);
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.more-services-toggle-btn:hover {
+  background: var(--color-blue-bright);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.more-services-toggle-btn .toggle-arrow {
+  transition: transform var(--transition-normal);
+}
+
+.more-services-content {
+  display: none;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.more-services-content.expanded {
+  display: block;
+}
+
+.more-services-directory-box {
+  background: var(--color-white);
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.more-services-pills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: 1rem;
+}
+
+.more-service-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  background: var(--color-slate-50);
+  border: 1px solid var(--color-slate-200);
+  color: var(--color-slate-700);
+  font-size: 0.875rem;
+  font-weight: 600;
 }
 
 /* --------------------------------------------------------------------------

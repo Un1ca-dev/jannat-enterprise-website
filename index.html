@@ -67,7 +67,11 @@
       "latitude": 24.0970147,
       "longitude": 88.6150643
     },
-    "hasMap": "https://www.google.com/maps/place/JANNAT+ENTERPRISE/@24.0970196,88.6124894,17z/data=!3m1!4b1!4m6!3m5!1s0x39f9597d6ade8401:0xe783e1b93852d328!8m2!3d24.0970147!4d88.6150643!16s%2Fg%2F11jg7qbr8w",
+    "founder": {
+      "@type": "Person",
+      "name": "SUMAN SHEIKH"
+    },
+    "hasMap": "https://maps.app.goo.gl/zQPQ9THg9YLAYM4r6",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -160,9 +164,10 @@
         <ul class="nav-links">
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#mobile-repair" class="nav-link">Mobile Repair</a></li>
           <li><a href="#documents" class="nav-link">Documents</a></li>
           <li><a href="#broadband" class="nav-link">Internet &amp; Broadband</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#about" class="nav-link">About &amp; Owner</a></li>
           <li><a href="#location" class="nav-link">Location</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -195,9 +200,10 @@
     <nav class="mobile-nav-links">
       <a href="#home" class="mobile-nav-link active">🏠 Home</a>
       <a href="#services" class="mobile-nav-link">⭐ Services (আমাদের পরিষেবা)</a>
+      <a href="#mobile-repair" class="mobile-nav-link">📱 Mobile Repair &amp; Software</a>
       <a href="#documents" class="mobile-nav-link">📄 Documents Required</a>
       <a href="#broadband" class="mobile-nav-link">🌐 Internet &amp; Broadband</a>
-      <a href="#about" class="mobile-nav-link">🪪 Operator &amp; About</a>
+      <a href="#about" class="mobile-nav-link">🪪 Operator &amp; Owner</a>
       <a href="#why-us" class="mobile-nav-link">✨ Why Choose Us</a>
       <a href="#location" class="mobile-nav-link">📍 Location &amp; Hours</a>
       <a href="#contact" class="mobile-nav-link">📞 Contact Us</a>
@@ -340,19 +346,84 @@
       </div>
     </section>
 
-    <!-- POPULAR SERVICES SECTION -->
+    <!-- COMPREHENSIVE SERVICE DIRECTORY SECTION -->
     <section class="section services-section" id="services">
       <div class="container">
         <div class="section-header">
-          <span class="badge-tag">CSC • Banking • Connectivity</span>
-          <h2 class="section-title bengali-text">আমাদের পরিষেবা</h2>
+          <span class="badge-tag">CSC • Citizen • Banking • Connectivity</span>
+          <h2 class="section-title bengali-text">আমাদের সম্পূর্ণ পরিষেবা নির্দেশিকা</h2>
           <p class="section-subtitle bengali-text">
-            প্রয়োজনীয় Digital, CSC, Banking &amp; Connectivity Services এক ছাদের নিচে।
+            প্রয়োজনীয় Digital, CSC, Banking, Loan &amp; Connectivity Services এক ছাদের নিচে।
           </p>
+        </div>
+
+        <!-- Most Requested Services Spotlight -->
+        <div class="popular-spotlight-wrapper">
+          <div class="popular-spotlight-header">
+            <span class="badge-tag popular-badge">⭐ Most Requested</span>
+            <h3 class="popular-spotlight-title">জনপ্রিয় ও নিত্যপ্রয়োজনীয় পরিষেবা (Quick Access)</h3>
+          </div>
+          <div class="popular-services-grid" id="popularServicesGrid"></div>
+        </div>
+
+        <!-- Live Service Search & Category Filter -->
+        <div class="services-search-container">
+          <div class="service-search-wrap">
+            <span class="search-icon-left">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <input type="text" id="serviceSearchInput" class="service-search-input" placeholder="আপনার প্রয়োজনীয় পরিষেবা খুঁজুন... (Search services or documents, e.g. Ration, Passport, PVC, PM-Kisan, Loan, Repair)" aria-label="Search services or required documents">
+            <button type="button" id="serviceSearchClear" class="search-clear-btn" aria-label="Clear search">✕</button>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="category-tabs-scroll-wrap" id="serviceCategoryTabs" role="tablist" aria-label="Filter services by category"></div>
+
+          <!-- Search Results Count Banner -->
+          <div id="searchResultsCount" class="search-results-badge" style="display: none;"></div>
         </div>
 
         <!-- Rendered dynamically by js/app.js -->
         <div class="services-grid" id="servicesGrid"></div>
+
+        <!-- Expandable "আরও Online Services" Section -->
+        <div class="more-services-wrapper">
+          <button type="button" id="moreServicesToggleBtn" class="more-services-toggle-btn" aria-expanded="false" aria-controls="moreServicesContent">
+            <span class="toggle-label">আরও Online Services দেখুন (View More Online Services)</span>
+            <svg class="toggle-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+
+          <div id="moreServicesContent" class="more-services-content">
+            <div class="more-services-directory-box">
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-navy-950); margin-bottom: 0.5rem;">
+                🌐 অতিরিক্ত অনলাইন ও নাগরিক পরিষেবা তালিকা (Citizen Portal Assistance)
+              </h4>
+              <p style="font-size: 0.90625rem; color: var(--color-slate-600); margin-bottom: 1.25rem;">
+                উপরে উল্লিখিত প্রধান ক্যাটাগরিগুলি ছাড়াও, আমাদের সেন্টারে নিম্নলিখিত সমস্ত সরকারি, প্রাতিষ্ঠানিক ও দৈনন্দিন অনলাইন পোর্টাল সহায়তা যত্নসহকারে প্রদান করা হয়:
+              </p>
+
+              <div class="more-services-pills-list">
+                <span class="more-service-tag">📄 Online Government Citizen Form Fill-Up</span>
+                <span class="more-service-tag">🗳️ Voter Card New / Correction / Shift / Download</span>
+                <span class="more-service-tag">👷 E-Shram Card Registration, Update &amp; Download</span>
+                <span class="more-service-tag">💼 PF / EPFO UAN Activation, KYC &amp; Online Assistance</span>
+                <span class="more-service-tag">🎓 College / University Admission Form Fill-up</span>
+                <span class="more-service-tag">📝 Competitive Exam &amp; Government Job Application</span>
+                <span class="more-service-tag">📜 Caste Certificate (SC/ST/OBC) Online Assistance</span>
+                <span class="more-service-tag">🏛️ Income Certificate &amp; Residential Certificate Portal Assistance</span>
+                <span class="more-service-tag">🌾 Land Records (Banglarbhumi / Khatian / Plot Info) &amp; Mutation Assistance</span>
+                <span class="more-service-tag">💡 WBSEDCL Electricity Bill Payment &amp; Instant Receipt</span>
+                <span class="more-service-tag">📱 All Telecom Mobile &amp; DTH Dish Recharge</span>
+                <span class="more-service-tag">🎟️ Online Appointment &amp; Token Booking</span>
+                <span class="more-service-tag">📑 Print, Color Print, Xerox &amp; Document Lamination</span>
+              </div>
+
+              <div style="margin-top: 1.5rem; padding: 1rem; background: var(--color-slate-50); border-radius: var(--radius-md); font-size: 0.84375rem; color: var(--color-slate-600);">
+                ℹ️ <strong>Note:</strong> সমস্ত সরকারি ও পোর্টাল পরিষেবা প্রযোজ্য নিয়মাবলী এবং প্রয়োজনীয় ডকুমেন্টের উপর নির্ভরশীল। বিস্তারিত জানতে বা ডকুমেন্টস নিশ্চিত করতে সরাসরি সেন্টারে যোগাযোগ করুন।
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -457,6 +528,22 @@
       </div>
     </section>
 
+    <!-- DEDICATED MOBILE REPAIR & SOFTWARE SECTION -->
+    <section class="section mobile-repair-section" id="mobile-repair">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag orange">Hardware &amp; Software Care</span>
+          <h2 class="section-title">স্মার্টফোন মেরামত ও সফটওয়্যার সাপোর্ট</h2>
+          <p class="section-subtitle">
+            Smartphone Display, Battery, Charging Port Repair &amp; Fast Software Troubleshooting in Moktarpur, Domkal.
+          </p>
+        </div>
+
+        <!-- Rendered dynamically by js/app.js -->
+        <div class="mobile-repair-cards-grid" id="mobileRepairCardsGrid"></div>
+      </div>
+    </section>
+
     <!-- DOCUMENTS CENTRE SECTION -->
     <section class="section documents-section" id="documents">
       <div class="container">
@@ -508,12 +595,16 @@
 
             <div class="operator-detail-row">
               <div class="op-detail-item">
+                <span class="op-label">Shop Owner</span>
+                <span class="op-value highlight" style="color: var(--color-blue-bright); font-weight: 800;">SUMAN SHEIKH</span>
+              </div>
+              <div class="op-detail-item">
                 <span class="op-label">CSC / VLE ID</span>
                 <span class="op-value highlight">222365420014</span>
               </div>
               <div class="op-detail-item">
                 <span class="op-label">Role</span>
-                <span class="op-value">CSC-linked BIS Operator Service</span>
+                <span class="op-value">CSC VLE &amp; BIS Operator</span>
               </div>
               <div class="op-detail-item">
                 <span class="op-label">Location</span>
@@ -715,7 +806,7 @@
             </div>
 
             <div class="loc-cta-buttons">
-              <a href="https://www.google.com/maps/place/JANNAT+ENTERPRISE/@24.0970196,88.6124894,17z/data=!3m1!4b1!4m6!3m5!1s0x39f9597d6ade8401:0xe783e1b93852d328!8m2!3d24.0970147!4d88.6150643!16s%2Fg%2F11jg7qbr8w" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Get Directions to JANNAT ENTERPRISE on Google Maps">
+              <a href="https://maps.app.goo.gl/zQPQ9THg9YLAYM4r6" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Get Directions to JANNAT ENTERPRISE on Google Maps">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
                 <span>Get Directions</span>
               </a>
@@ -809,9 +900,21 @@
                 <label for="inquiryService" class="form-label">Select Service (পরিষেবা নির্বাচন করুন)</label>
                 <select id="inquiryService" class="form-control">
                   <option value="Ayushman Bharat PM-JAY BIS e-KYC">Ayushman Bharat PM-JAY BIS e-KYC</option>
+                  <option value="Ration Card Services">Ration Card Services (New / Transfer / Correction)</option>
+                  <option value="Passport Seva Assistance">Passport Seva Application &amp; Slot Assistance</option>
+                  <option value="Driving Licence Services">Driving Licence Online Assistance</option>
+                  <option value="PVC Smart Card Printing">PVC Smart Card Printing (Aadhaar, Voter, PAN, Health)</option>
+                  <option value="PM-Kisan Services">PM-Kisan Farmer Registration &amp; e-KYC</option>
+                  <option value="PMFBY Crop Insurance">PMFBY Crop Insurance Assistance</option>
+                  <option value="Insurance Services">Insurance Services (Bike, Car, Health, Life)</option>
+                  <option value="Loan Application Assistance">Loan Application Assistance</option>
+                  <option value="Credit Card Services">Credit Card Application Assistance</option>
+                  <option value="Bank Account Opening">Bank Account Opening (Savings / Current)</option>
+                  <option value="Axis Bank BC Services">Axis Bank BC / Banking Assistance</option>
+                  <option value="Mobile Screen & Hardware Repair">Mobile Screen &amp; Hardware Repair</option>
+                  <option value="Mobile Software & Flashing Support">Mobile Software, Flashing &amp; Unlock Assistance</option>
                   <option value="CSC Digital Services">CSC Digital Services</option>
                   <option value="PAN Card Services through CSC">PAN Card Services through CSC</option>
-                  <option value="Bank BC Services">Bank BC Services</option>
                   <option value="Electricity / Water Bill Payment">Electricity / Water Bill Payment</option>
                   <option value="Mobile / DTH Recharge">Mobile / DTH Recharge</option>
                   <option value="LPG Gas Booking">LPG Gas Booking</option>
@@ -819,6 +922,7 @@
                   <option value="Print, Xerox, Scan & Lamination">Print, Xerox, Scan &amp; Lamination</option>
                   <option value="New Internet / Broadband / Cable Connection">New Internet / Broadband / Cable Connection</option>
                   <option value="Computer & Digital Support">Computer &amp; Digital Support</option>
+                  <option value="Other Online Citizen Service">Other Online Citizen Service</option>
                 </select>
               </div>
 
@@ -871,6 +975,7 @@
             সব ডিজিটাল পরিষেবা, এক ছাদের নিচে।
           </p>
           <div class="footer-csc-tag">
+            Shop Owner: <strong>SUMAN SHEIKH</strong><br>
             CSC / VLE ID: <strong>222365420014</strong>
           </div>
         </div>
@@ -880,10 +985,11 @@
           <h4>Quick Links</h4>
           <ul class="footer-links-list">
             <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#services">Services Directory</a></li>
+            <li><a href="#mobile-repair">Mobile Repair &amp; Software</a></li>
             <li><a href="#documents">Documents Required</a></li>
             <li><a href="#broadband">Internet &amp; Broadband</a></li>
-            <li><a href="#about">About Operator</a></li>
+            <li><a href="#about">About &amp; Owner</a></li>
             <li><a href="#location">Location</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -894,16 +1000,15 @@
           <h4>Our Services</h4>
           <ul class="footer-links-list">
             <li><a href="#services">Ayushman BIS e-KYC</a></li>
-            <li><a href="#services">CSC Services</a></li>
-            <li><a href="#services">PAN Services through CSC</a></li>
-            <li><a href="#services">Bank BC Services</a></li>
-            <li><a href="#services">Bill Payment</a></li>
-            <li><a href="#services">Mobile Recharge</a></li>
-            <li><a href="#services">LPG Booking</a></li>
-            <li><a href="#services">Online Applications</a></li>
-            <li><a href="#services">Print / Scan / Xerox</a></li>
-            <li><a href="#broadband">Internet &amp; Broadband</a></li>
-            <li><a href="#broadband">Cable Network</a></li>
+            <li><a href="#services">Ration Card Services</a></li>
+            <li><a href="#services">Passport Seva Assistance</a></li>
+            <li><a href="#services">Driving Licence Services</a></li>
+            <li><a href="#services">PVC Card Printing</a></li>
+            <li><a href="#services">PM-Kisan &amp; PMFBY</a></li>
+            <li><a href="#services">Loan &amp; Credit Card Assistance</a></li>
+            <li><a href="#services">Bank BC &amp; Account Opening</a></li>
+            <li><a href="#mobile-repair">Mobile Screen &amp; Hardware Repair</a></li>
+            <li><a href="#broadband">Fiber Broadband &amp; Cable TV</a></li>
           </ul>
         </div>
 
@@ -930,7 +1035,7 @@
       <!-- Copyright Bottom Bar -->
       <div class="footer-bottom-bar">
         <div>
-          © 2026 <strong>JANNAT ENTERPRISE</strong>. All Rights Reserved.
+          © 2026 <strong>JANNAT ENTERPRISE</strong>. All Rights Reserved. • Shop Owner: <strong>SUMAN SHEIKH</strong>
         </div>
         <div>
           Independent Digital Service &amp; Technology Centre • CSC VLE ID: 222365420014
