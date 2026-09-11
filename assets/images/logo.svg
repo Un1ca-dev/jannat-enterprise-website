@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64">
+  <defs>
+    <linearGradient id="logoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="50%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="glowRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Monogram Badge -->
+  <g transform="translate(6, 6)">
+    <rect width="52" height="52" rx="14" fill="url(#logoBg)"/>
+    <rect x="1" y="1" width="50" height="50" rx="13" fill="none" stroke="url(#glowRing)" stroke-width="1.8"/>
+    
+    <!-- Letter J -->
+    <path d="M22 15 V33 C22 38 18 39.5 15 39" fill="none" stroke="#FFFFFF" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Letter E -->
+    <path d="M29 17 H40 M29 26 H37 M29 35 H40 M29 17 V35" fill="none" stroke="#38BDF8" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Tech node dot -->
+    <circle cx="41" cy="14" r="3.2" fill="#F97316"/>
+  </g>
+
+  <!-- Business Name Text -->
+  <text x="68" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" letter-spacing="0.5" fill="#FFFFFF">
+    JANNAT <tspan fill="#38BDF8">ENTERPRISE</tspan>
+  </text>
+  
+  <!-- Subtitle Tagline -->
+  <text x="68" y="47" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600" letter-spacing="1.2" fill="#94A3B8">
+    DIGITAL SERVICE &amp; TECH CENTRE
+  </text>
+
+  <!-- Verified CSC ID badge pill -->
+  <g transform="translate(68, 51)">
+    <text font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="600" fill="#38BDF8" letter-spacing="0.5">
+      CSC VLE ID: 222365420014
+    </text>
+  </g>
+</svg>
