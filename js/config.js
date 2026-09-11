@@ -81,12 +81,12 @@ const JANNAT_CONFIG = {
   categories: [
     { id: "all", label: "All Services (সব পরিষেবা)", icon: "squares-2x2" },
     { id: "health-govt", label: "🏥 Health & Government", icon: "shield-check" },
-    { id: "identity-doc", label: "🪪 Identity & Documents", icon: "id-card" },
+    { id: "identity-doc", label: "🪪 Identity & Documentation", icon: "id-card" },
     { id: "banking-finance", label: "🏦 Banking & Finance", icon: "banknotes" },
     { id: "payments-recharge", label: "💳 Payments & Recharge", icon: "receipt-percent" },
     { id: "digital-computer", label: "💻 Digital & Computer", icon: "computer-desktop" },
     { id: "mobile-repair", label: "📱 Mobile & Repair", icon: "device-phone-mobile" },
-    { id: "internet-broadband", label: "🌐 Internet & Broadband", icon: "wifi" }
+    { id: "internet-broadband", label: "🌐 Internet & Connectivity", icon: "wifi" }
   ],
 
   // Axis Bank BC Configuration Toggle
@@ -550,7 +550,7 @@ const JANNAT_CONFIG = {
       ],
       importantNote: "Please bring your recent bill or clearly noted Consumer ID. Instant receipts are provided upon successful payment.",
       actionLabel: "📋 Required Documents",
-      isPopular: true
+      isPopular: false
     },
     {
       id: "mobile-recharge",
@@ -634,7 +634,7 @@ const JANNAT_CONFIG = {
       ],
       importantNote: "Required documents vary by specific notification. Please bring all original marksheets and certificates for accurate data entry.",
       actionLabel: "📋 Required Documents",
-      isPopular: true
+      isPopular: false
     },
     {
       id: "printing-xerox",
@@ -739,6 +739,31 @@ const JANNAT_CONFIG = {
         "Existing backup or backup instructions"
       ],
       importantNote: "Customers are advised that factory reset will erase device memory. Backup assistance is available upon request.",
+      actionLabel: "📋 Required Documents",
+      isPopular: false
+    },
+    {
+      id: "smartphone-troubleshooting",
+      category: "mobile-repair",
+      categoryName: "Mobile & Repair",
+      badge: "Diagnosis & Setup",
+      icon: "cpu-chip",
+      title: "Smartphone Troubleshooting",
+      subtitle: "Device Setup, App Issues & Maintenance",
+      shortDescription: "Basic smartphone troubleshooting, app error fixes, device setup, storage optimization, and general maintenance.",
+      fullDescription: "Everyday assistance for smartphone users. We help diagnose device performance issues, resolve app crashes, configure email/accounts, organize device storage, and provide honest maintenance advice for smooth daily operation.",
+      whoNeedsIt: "Anyone needing quick assistance resolving smartphone glitches, configuring new apps, or optimizing phone performance.",
+      features: [
+        "Basic smartphone troubleshooting",
+        "App & software troubleshooting",
+        "Device setup & account configuration",
+        "General maintenance & cleaning advice"
+      ],
+      documents: [
+        "Smartphone device with charger",
+        "Account credentials where setup is requested"
+      ],
+      importantNote: "Requirements may vary depending on service, eligibility and applicable rules. We do not promise data recovery unless explicitly evaluated.",
       actionLabel: "📋 Required Documents",
       isPopular: false
     },
