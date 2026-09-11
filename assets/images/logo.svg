@@ -1,45 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" width="320" height="72" fill="none">
   <defs>
-    <linearGradient id="logoBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E40AF"/>
-      <stop offset="50%" stop-color="#1D4ED8"/>
-      <stop offset="100%" stop-color="#0F172A"/>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="50%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#8b5cf6" />
     </linearGradient>
-    <linearGradient id="glowRing" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8"/>
-      <stop offset="100%" stop-color="#F97316"/>
+    <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
     </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
-
-  <!-- Monogram Badge -->
   <g transform="translate(6, 6)">
-    <rect width="52" height="52" rx="14" fill="url(#logoBg)"/>
-    <rect x="1" y="1" width="50" height="50" rx="13" fill="none" stroke="url(#glowRing)" stroke-width="1.8"/>
-    
-    <!-- Letter J -->
-    <path d="M22 15 V33 C22 38 18 39.5 15 39" fill="none" stroke="#FFFFFF" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
-    
-    <!-- Letter E -->
-    <path d="M29 17 H40 M29 26 H37 M29 35 H40 M29 17 V35" fill="none" stroke="#38BDF8" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
-    
-    <!-- Tech node dot -->
-    <circle cx="41" cy="14" r="3.2" fill="#F97316"/>
+    <polygon points="30,2 58,18 58,42 30,58 2,42 2,18" fill="url(#hexGrad)" stroke="url(#logoGrad)" stroke-width="2.5" filter="url(#glow)" />
+    <polygon points="30,7 53,20 53,40 30,53 7,40 7,20" fill="none" stroke="rgba(0, 240, 255, 0.25)" stroke-width="1.2" stroke-dasharray="3,3" />
+    <path d="M22 17 V36 C22 41 17 42 14 40" stroke="#00f0ff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M28 18 H43 M28 29 H39 M28 40 H43" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <circle cx="22" cy="18" r="2.2" fill="#8b5cf6" />
   </g>
-
-  <!-- Business Name Text -->
-  <text x="68" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" letter-spacing="0.5" fill="#FFFFFF">
-    JANNAT <tspan fill="#38BDF8">ENTERPRISE</tspan>
-  </text>
-  
-  <!-- Subtitle Tagline -->
-  <text x="68" y="47" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600" letter-spacing="1.2" fill="#94A3B8">
-    DIGITAL SERVICE &amp; TECH CENTRE
-  </text>
-
-  <!-- Verified CSC ID badge pill -->
-  <g transform="translate(68, 51)">
-    <text font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="600" fill="#38BDF8" letter-spacing="0.5">
-      CSC VLE ID: 222365420014
+  <g transform="translate(76, 15)">
+    <text x="0" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', sans-serif" font-weight="900" font-size="19" letter-spacing="1.2" fill="#ffffff">
+      JANNAT <tspan fill="#00f0ff">ENTERPRISE</tspan>
     </text>
+    <text x="0" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-weight="700" font-size="8" letter-spacing="1.6" fill="#94a3b8">
+      DIGITAL SERVICE &amp; TECHNOLOGY CENTRE
+    </text>
+    <g transform="translate(0, 39)">
+      <rect x="0" y="0" width="138" height="15" rx="7.5" fill="rgba(0, 240, 255, 0.08)" stroke="rgba(0, 240, 255, 0.25)" stroke-width="1" />
+      <circle cx="7.5" cy="7.5" r="3" fill="#10b981" />
+      <text x="15" y="10.5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-weight="700" font-size="7.5" fill="#38bdf8" letter-spacing="0.5">
+        CSC VLE ID: 222365420014
+      </text>
+    </g>
   </g>
 </svg>

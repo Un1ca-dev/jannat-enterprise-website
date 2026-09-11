@@ -20,7 +20,8 @@ const requiredFiles = [
   'assets/images/logo.svg',
   'assets/images/hero-visual.svg',
   'assets/images/broadband-visual.svg',
-  'assets/images/og-image.svg'
+  'assets/images/og-image.svg',
+  'assets/images/owner-suman-sheikh.png'
 ];
 
 requiredFiles.forEach(file => {
@@ -102,9 +103,24 @@ try {
     if (cfg.cscId !== "222365420014") errors.push(`CSC ID mismatch: expected 222365420014, got ${cfg.cscId}`);
     if (cfg.siteUrl !== "https://jannat.un1ca.qzz.io") errors.push(`siteUrl mismatch: expected https://jannat.un1ca.qzz.io, got ${cfg.siteUrl}`);
     if (cfg.googleMapsUrl !== "https://maps.app.goo.gl/zQPQ9THg9YLAYM4r6") errors.push(`Google Maps URL mismatch: got ${cfg.googleMapsUrl}`);
-    else console.log(`✓ Google Maps URL verified: ${cfg.googleMapsUrl}`);
-    if (!cfg.services || cfg.services.length < 20) errors.push(`Expected at least 20 services, found ${cfg.services?.length}`);
-    else console.log(`✓ Comprehensive services catalog verified (${cfg.services.length} services configured)`);
+    if (!cfg.services || cfg.services.length < 20) {
+      errors.push(`Expected at least 20 services, found ${cfg.services?.length}`);
+    } else {
+      console.log(`✓ Comprehensive services catalog verified (${cfg.services.length} services configured)`);
+      let missingImgs = 0;
+      cfg.services.forEach(s => {
+        if (!s.image) {
+          errors.push(`Service ${s.id} missing image property`);
+          missingImgs++;
+        } else if (!fs.existsSync(path.join(baseDir, s.image))) {
+          errors.push(`Service ${s.id} image file missing on disk: ${s.image}`);
+          missingImgs++;
+        }
+      });
+      if (missingImgs === 0) {
+        console.log(`✓ All ${cfg.services.length} services have verified dedicated SVG illustrations on disk`);
+      }
+    }
   }
 } catch (err) {
   errors.push(`Error executing config.js: ${err.message}`);

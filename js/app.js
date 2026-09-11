@@ -1,6 +1,7 @@
 /**
- * JANNAT ENTERPRISE - Main Application Logic
- * Comprehensive Service Directory, Interactive Search, Filtering & Modal
+ * JANNAT ENTERPRISE - Main Application Logic (V2 Midnight Edition)
+ * Comprehensive Service Directory, High-Tech Illustrations, Interactive Search,
+ * Category Filtering, Live Status, Document Checklist & Modal System
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -56,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let activeSearchQuery = '';
 
   // -------------------------------------------------------------------------
-  // 2. SVG Icons Helper
+  // 2. High-Tech SVG Icons
   // -------------------------------------------------------------------------
   const icons = {
     'shield-check': `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
@@ -102,24 +103,29 @@ document.addEventListener('DOMContentLoaded', () => {
     return `tel:${config.phone || '8918273721'}`;
   }
 
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
   // -------------------------------------------------------------------------
   // 4. Header & Mobile Menu Handling
   // -------------------------------------------------------------------------
   window.addEventListener('scroll', () => {
     if (window.scrollY > 30) {
-      header.classList.add('scrolled');
+      header?.classList.add('scrolled');
     } else {
-      header.classList.remove('scrolled');
+      header?.classList.remove('scrolled');
     }
   }, { passive: true });
 
   function toggleMobileMenu(open) {
-    const isOpen = open !== undefined ? open : !mobileDrawer.classList.contains('open');
-    hamburgerBtn.classList.toggle('active', isOpen);
-    mobileDrawer.classList.toggle('open', isOpen);
-    mobileBackdrop.classList.toggle('open', isOpen);
+    const isOpen = open !== undefined ? open : !mobileDrawer?.classList.contains('open');
+    hamburgerBtn?.classList.toggle('active', isOpen);
+    mobileDrawer?.classList.toggle('open', isOpen);
+    mobileBackdrop?.classList.toggle('open', isOpen);
     document.body.classList.toggle('menu-open', isOpen);
-    hamburgerBtn.setAttribute('aria-expanded', isOpen);
+    hamburgerBtn?.setAttribute('aria-expanded', isOpen);
   }
 
   if (hamburgerBtn) hamburgerBtn.addEventListener('click', () => toggleMobileMenu());
@@ -129,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // -------------------------------------------------------------------------
-  // 5. Dynamic Business Hours & Live Open/Closed Status
+  // 5. Dynamic Business Hours & Live Open/Closed Status (Asia/Kolkata)
   // -------------------------------------------------------------------------
   function updateLiveBusinessStatus() {
     if (!businessHoursStatus) return;
@@ -161,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateLiveBusinessStatus, 60000);
 
   // -------------------------------------------------------------------------
-  // 6. Render Most Requested Services Spotlight
+  // 6. Render Most Requested Services Spotlight (11 items)
   // -------------------------------------------------------------------------
   function renderPopularServices() {
     if (!popularServicesGrid || !config.services) return;
@@ -177,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="title">${svc.title}</span>
             <span class="sub">${svc.subtitle}</span>
           </div>
-          <button class="popular-pill-btn open-modal-btn" data-id="${svc.id}" aria-label="View documents for ${svc.title}">
+          <button type="button" class="popular-pill-btn open-modal-btn" data-id="${svc.id}" aria-label="View documents for ${svc.title}">
             <span>📋 Documents</span>
           </button>
         </div>
@@ -205,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!serviceCategoryTabs || !config.categories) return;
 
     serviceCategoryTabs.innerHTML = config.categories.map(cat => `
-      <button class="category-tab-btn ${cat.id === activeCategory ? 'active' : ''}" data-category="${cat.id}">
+      <button type="button" class="category-tab-btn ${cat.id === activeCategory ? 'active' : ''}" data-category="${cat.id}">
         <span>${cat.label}</span>
       </button>
     `).join('');
@@ -221,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------------------
-  // 8. Render Main Filtered Services Grid
+  // 8. Render Main Filtered Services Grid with SVG Illustrations
   // -------------------------------------------------------------------------
   function filterAndRenderServices() {
     if (!servicesGrid || !config.services) return;
@@ -229,10 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const query = activeSearchQuery.toLowerCase().trim();
 
     const filtered = config.services.filter(svc => {
-      // Category match
       const categoryMatch = (activeCategory === 'all') || (svc.category === activeCategory);
-
-      // Search match across title, subtitle, desc, documents, and category
       const titleMatch = svc.title.toLowerCase().includes(query);
       const subMatch = svc.subtitle.toLowerCase().includes(query);
       const descMatch = svc.shortDescription.toLowerCase().includes(query);
@@ -240,7 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const docsMatch = svc.documents.some(d => d.toLowerCase().includes(query));
 
       const searchMatch = query === '' || titleMatch || subMatch || descMatch || catMatch || docsMatch;
-
       return categoryMatch && searchMatch;
     });
 
@@ -264,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔍</div>
           <h3>কোনো পরিষেবা খুঁজে পাওয়া যায়নি ("${escapeHtml(activeSearchQuery)}")</h3>
           <p>আপনার প্রয়োজনীয় পরিষেবার জন্য সরাসরি আমাদের কল করুন বা WhatsApp-এ মেসেজ পাঠান।</p>
-          <div style="display: flex; gap: 0.75rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap;">
+          <div style="display: flex; gap: 0.75rem; justify-content: center; margin-top: 1.25rem; flex-wrap: wrap;">
             <a href="${getCallUrl()}" class="btn btn-call">
               ${icons['call']}
               <span>Call 8918273721</span>
@@ -282,14 +284,21 @@ document.addEventListener('DOMContentLoaded', () => {
     servicesGrid.innerHTML = filtered.map(svc => {
       const iconSvg = icons[svc.icon] || icons['shield-check'];
       const popularBadge = svc.isPopular ? `<span class="service-badge popular">⭐ Popular</span>` : '';
+      const imageMarkup = svc.image ? `
+        <div class="service-card-media">
+          <img src="${svc.image}" alt="${escapeHtml(svc.title)}" width="320" height="160" loading="lazy">
+        </div>
+      ` : '';
 
       return `
         <article class="service-card ${svc.isPopular ? 'highlighted' : ''}" id="service-${svc.id}">
+          ${imageMarkup}
+
           <div class="service-top-meta">
             <div class="service-icon-wrap" aria-hidden="true">
               ${iconSvg}
             </div>
-            <div style="display: flex; gap: 4px; align-items: center;">
+            <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
               ${popularBadge}
               <span class="service-badge primary">${svc.badge}</span>
             </div>
@@ -309,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
 
           <div class="service-card-actions">
-            <button class="btn btn-primary btn-sm open-doc-modal-btn" data-id="${svc.id}">
+            <button type="button" class="btn btn-primary btn-sm open-doc-modal-btn" data-id="${svc.id}">
               <span>📋 Required Documents</span>
             </button>
             <div class="service-action-quick-row">
@@ -327,7 +336,6 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }).join('');
 
-    // Attach click triggers to open document modal
     servicesGrid.querySelectorAll('.open-doc-modal-btn').forEach(btn => {
       btn.addEventListener('click', () => openServiceModal(btn.getAttribute('data-id')));
     });
@@ -343,27 +351,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mobileRepairCardsGrid.innerHTML = repairServices.map(svc => `
       <div class="mobile-repair-feature-card">
+        ${svc.image ? `
+          <div class="service-card-media" style="height: 140px; margin-bottom: 16px;">
+            <img src="${svc.image}" alt="${escapeHtml(svc.title)}" width="320" height="140" loading="lazy">
+          </div>
+        ` : ''}
         <div class="repair-icon-box">
           ${icons[svc.icon] || icons['wrench-screwdriver']}
         </div>
         <h4>${svc.title}</h4>
         <div class="repair-subtitle">${svc.subtitle}</div>
         <p>${svc.shortDescription}</p>
-        <ul class="repair-check-list">
+        <div class="repair-checklist">
           ${svc.features.map(f => `
-            <li>
+            <div class="repair-check-item">
               ${icons['check']}
               <span>${f}</span>
-            </li>
+            </div>
           `).join('')}
-        </ul>
-        <div class="repair-card-cta">
-          <button class="btn btn-outline btn-sm open-repair-doc-btn" data-id="${svc.id}">
-            <span>📋 Required Documents &amp; Notes</span>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: auto;">
+          <button type="button" class="btn btn-call btn-sm open-repair-doc-btn" data-id="${svc.id}" style="flex: 1;">
+            <span>📋 Documents</span>
           </button>
-          <a href="${getServiceWhatsAppUrl(svc.title)}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+          <a href="${getServiceWhatsAppUrl(svc.title)}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm" style="flex: 1;">
             ${icons['whatsapp']}
-            <span>Inquire Now</span>
+            <span>Inquire</span>
           </a>
         </div>
       </div>
@@ -375,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------------------
-  // 10. Search Input Handlers
+  // 10. Live Search Input Handlers
   // -------------------------------------------------------------------------
   if (serviceSearchInput) {
     serviceSearchInput.addEventListener('input', (e) => {
@@ -401,14 +414,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // -------------------------------------------------------------------------
   if (moreServicesToggleBtn && moreServicesContent) {
     moreServicesToggleBtn.addEventListener('click', () => {
-      const isExpanded = moreServicesContent.classList.contains('expanded');
+      const isExpanded = moreServicesContent.classList.contains('open') || moreServicesContent.classList.contains('expanded');
+      moreServicesContent.classList.toggle('open', !isExpanded);
       moreServicesContent.classList.toggle('expanded', !isExpanded);
       moreServicesToggleBtn.setAttribute('aria-expanded', !isExpanded);
-      
-      const icon = moreServicesToggleBtn.querySelector('.toggle-arrow');
-      if (icon) {
-        icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
-      }
       
       const label = moreServicesToggleBtn.querySelector('.toggle-label');
       if (label) {
@@ -418,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------------------
-  // 11b. Render Documents Centre & Checklists Section
+  // 12. Render Documents Centre & Checklists Section
   // -------------------------------------------------------------------------
   let activeDocCategory = 'all';
   let activeDocQuery = '';
@@ -426,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderDocumentCategoryTabs() {
     if (!documentCategoryTabs || !config.categories) return;
     documentCategoryTabs.innerHTML = config.categories.map(cat => `
-      <button class="category-tab-btn ${cat.id === activeDocCategory ? 'active' : ''}" data-category="${cat.id}">
+      <button type="button" class="category-tab-btn ${cat.id === activeDocCategory ? 'active' : ''}" data-category="${cat.id}">
         <span>${cat.label}</span>
       </button>
     `).join('');
@@ -457,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
       documentsGrid.innerHTML = `
         <div class="no-services-found" style="grid-column: 1 / -1;">
           <p>কোনো ডকুমেন্টস তালিকা পাওয়া যায়নি। বিস্তারিত জানতে আমাদের সাথে সরাসরি যোগাযোগ করুন।</p>
-          <a href="${getWhatsAppUrl('Hello JANNAT ENTERPRISE, I want to confirm documents for: ' + activeDocQuery)}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="margin-top: 0.5rem;">
+          <a href="${getWhatsAppUrl('Hello JANNAT ENTERPRISE, I want to confirm documents for: ' + activeDocQuery)}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="margin-top: 1rem; display: inline-flex;">
             ${icons['whatsapp']}
             <span>Inquire on WhatsApp</span>
           </a>
@@ -467,31 +476,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     documentsGrid.innerHTML = filtered.map(svc => `
-      <div class="document-checklist-card">
-        <div class="doc-card-header">
-          <div class="doc-badge-icon">${icons[svc.icon] || icons['shield-check']}</div>
-          <div>
+      <div class="doc-checklist-card">
+        <div class="doc-checklist-header">
+          <div class="doc-checklist-icon">${icons[svc.icon] || icons['shield-check']}</div>
+          <div class="doc-checklist-title">
             <h4>${svc.title}</h4>
-            <span class="doc-sub">${svc.subtitle}</span>
+            <span>${svc.subtitle}</span>
           </div>
         </div>
-        <div class="doc-list-title">প্রয়োজনীয় ডকুমেন্টস তালিকা:</div>
-        <ul class="doc-items-list">
+
+        <ul class="doc-items-ul">
           ${svc.documents.map(d => `
-            <li>
+            <li class="doc-item-li">
               ${icons['check']}
               <span>${d}</span>
             </li>
           `).join('')}
         </ul>
+
         <div class="doc-note-box">
-          <strong>Important:</strong> ${svc.importantNote}
+          <strong>Note:</strong> ${svc.importantNote}
         </div>
-        <div class="doc-card-actions">
-          <button class="btn btn-primary btn-sm open-doc-checklist-btn" data-id="${svc.id}">
-            <span>View Complete Guide</span>
+
+        <div style="display: flex; gap: 8px; margin-top: auto;">
+          <button type="button" class="btn btn-primary btn-sm open-doc-modal-btn" data-id="${svc.id}" style="flex: 1;">
+            <span>View Details</span>
           </button>
-          <a href="${getServiceWhatsAppUrl(svc.title)}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+          <a href="${getServiceWhatsAppUrl(svc.title)}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm" style="flex: 1;">
             ${icons['whatsapp']}
             <span>Inquire</span>
           </a>
@@ -499,7 +510,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `).join('');
 
-    documentsGrid.querySelectorAll('.open-doc-checklist-btn').forEach(btn => {
+    documentsGrid.querySelectorAll('.open-doc-modal-btn').forEach(btn => {
       btn.addEventListener('click', () => openServiceModal(btn.getAttribute('data-id')));
     });
   }
@@ -512,29 +523,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------------------
-  // 12. Render Training Cards
+  // 13. Render Training Credentials
   // -------------------------------------------------------------------------
   function renderTrainings() {
     if (!trainingGrid || !config.trainings) return;
 
     trainingGrid.innerHTML = config.trainings.map(item => `
       <div class="training-card">
-        <div class="training-badge-head">
-          ${icons['check']}
-          <span>Verified Operator Training</span>
+        <div class="training-card-header">
+          <h4>${item.title}</h4>
+          <span class="training-verified-pill">✓ Verified</span>
         </div>
-        <h4>${item.title}</h4>
         <p>${item.description}</p>
       </div>
     `).join('');
   }
 
   // -------------------------------------------------------------------------
-  // 13. Service Detail & Documents Modal Logic
+  // 14. Service Detail & Documents Modal Logic
   // -------------------------------------------------------------------------
   function openServiceModal(serviceId) {
     const service = config.services.find(s => s.id === serviceId);
-    if (!service) return;
+    if (!service || !serviceModal) return;
 
     modalTitle.textContent = service.title;
     modalSubtitle.textContent = service.subtitle;
@@ -553,9 +563,10 @@ document.addEventListener('DOMContentLoaded', () => {
     modalNote.innerHTML = `<strong>Verification Guidance:</strong> ${service.importantNote}`;
 
     // Action buttons
-    modalCallBtn.href = getCallUrl();
-    modalWhatsAppBtn.href = getServiceWhatsAppUrl(service.title);
+    if (modalCallBtn) modalCallBtn.href = getCallUrl();
+    if (modalWhatsAppBtn) modalWhatsAppBtn.href = getServiceWhatsAppUrl(service.title);
 
+    serviceModal.classList.add('open');
     serviceModal.classList.add('active');
     document.body.classList.add('modal-open');
     serviceModal.setAttribute('aria-hidden', 'false');
@@ -564,6 +575,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function closeServiceModal() {
+    if (!serviceModal) return;
+    serviceModal.classList.remove('open');
     serviceModal.classList.remove('active');
     document.body.classList.remove('modal-open');
     serviceModal.setAttribute('aria-hidden', 'true');
@@ -576,13 +589,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && serviceModal?.classList.contains('active')) {
+    if (e.key === 'Escape' && serviceModal && (serviceModal.classList.contains('open') || serviceModal.classList.contains('active'))) {
       closeServiceModal();
     }
   });
 
   // -------------------------------------------------------------------------
-  // 14. Quick WhatsApp Inquiry Form Handler
+  // 15. Quick WhatsApp Inquiry Form Handler
   // -------------------------------------------------------------------------
   if (quickInquiryForm) {
     quickInquiryForm.addEventListener('submit', (e) => {
@@ -597,12 +610,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function escapeHtml(str) {
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  }
-
   // -------------------------------------------------------------------------
-  // 15. Initialize Everything
+  // 16. Initialize Everything
   // -------------------------------------------------------------------------
   renderPopularServices();
   renderCategoryTabs();
