@@ -34,8 +34,14 @@ const JANNAT_CONFIG = {
   cscId: "222365420014",
   vleRole: "CSC-linked BIS Operator Service",
   
-  // Google Maps URL (Replace with your direct Google Maps place URL when available)
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Moktarpur+Raipur+Domkal+Murshidabad+West+Bengal",
+  // Official Google Maps Place URL
+  googleMapsUrl: "https://www.google.com/maps/place/JANNAT+ENTERPRISE/@24.0970196,88.6124894,17z/data=!3m1!4b1!4m6!3m5!1s0x39f9597d6ade8401:0xe783e1b93852d328!8m2!3d24.0970147!4d88.6150643!16s%2Fg%2F11jg7qbr8w",
+
+  // Exact Geo Coordinates
+  geo: {
+    latitude: 24.0970147,
+    longitude: 88.6150643
+  },
   
   // Business Opening Hours (24-hour format for live open/closed logic)
   businessHours: {
