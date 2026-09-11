@@ -6,6 +6,7 @@ yarn-error.log*
 
 # Build Output (Cloudflare Pages generates this via npm run build)
 dist/
+.wrangler/
 
 # OS Generated Files
 .DS_Store
